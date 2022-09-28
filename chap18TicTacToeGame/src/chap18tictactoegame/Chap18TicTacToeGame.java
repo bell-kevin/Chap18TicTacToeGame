@@ -50,12 +50,17 @@ public class Chap18TicTacToeGame extends JFrame {
             JButton btn = (JButton) e.getSource();
             if (btn.getText().isEmpty()) {
                 btn.setText(xTurn ? "X" : "O");
-                xTurn = !xTurn;
+                // if there's a win
+                //{
+                //print winning player
+                //prepare for new game
             } else {
+                xTurn = !xTurn;
                 JOptionPane.showMessageDialog(null, "Player "
                         + (xTurn ? "O" : "X") + ", this spot is already taken");
             }
         }
+        //} 
     }
 //******************************************************************************
 
