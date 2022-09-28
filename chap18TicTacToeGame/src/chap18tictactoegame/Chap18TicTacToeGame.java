@@ -52,7 +52,8 @@ public class Chap18TicTacToeGame extends JFrame {
                 btn.setText(xTurn ? "X" : "O");
                 xTurn = !xTurn;
             } else {
-                JOptionPane.showMessageDialog(null, "Player, this spot is already taken");
+                JOptionPane.showMessageDialog(null, "Player "
+                        + (xTurn ? "O" : "X") + ", this spot is already taken");
             }
         }
     }
