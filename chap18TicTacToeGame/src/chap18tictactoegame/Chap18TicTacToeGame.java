@@ -60,7 +60,6 @@ public class Chap18TicTacToeGame extends JFrame {
                         + (xTurn ? "O" : "X") + ", this spot is already taken");
             }
         }
-        //} 
     }
 //******************************************************************************
 
