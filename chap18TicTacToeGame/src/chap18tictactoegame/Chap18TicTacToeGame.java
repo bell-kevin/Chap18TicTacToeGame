@@ -19,8 +19,9 @@ public class Chap18TicTacToeGame extends JFrame {
     private static final int HEIGHT = 220;
     private boolean xTurn = true;
     JButton btns[][] = new JButton[3][3];
-
+    int count;
 //******************************************************************************
+
     public Chap18TicTacToeGame() {
         setTitle("Tic-Tac-Toe");
         setSize(WIDTH, HEIGHT);
@@ -49,6 +50,7 @@ public class Chap18TicTacToeGame extends JFrame {
     private class Listener implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
+
             JButton btn = (JButton) e.getSource();
             if (btn.getText().isEmpty()) {
                 btn.setText(xTurn ? "X" : "O");
@@ -57,10 +59,12 @@ public class Chap18TicTacToeGame extends JFrame {
                     JOptionPane.showMessageDialog(btn, "Congrats winner "
                             + (xTurn ? "X" : "O"));
                     btn.setText("");
+                    count = 0;
                     for (int i = 0; i < 3; i++) {
                         for (int j = 0; j < 3; j++) {
                             btns[i][j].setText("");
                             xTurn = true;
+
                         }
                     }
                 } else {
@@ -69,6 +73,16 @@ public class Chap18TicTacToeGame extends JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "Player "
                         + (xTurn ? "X" : "O") + ", this spot is already taken");
+            }
+            count++;
+            if (count == 9) {
+                JOptionPane.showMessageDialog(null, "No more moves, game over");
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 3; j++) {
+                        btns[i][j].setText("");
+                        xTurn = true;
+                    }
+                }
             }
         }
     }
