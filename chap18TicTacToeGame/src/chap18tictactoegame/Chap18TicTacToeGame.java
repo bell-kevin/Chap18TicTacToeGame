@@ -18,8 +18,9 @@ public class Chap18TicTacToeGame extends JFrame {
     private static final int WIDTH = 200;
     private static final int HEIGHT = 220;
     private boolean xTurn = true;
-//******************************************************************************
+    JButton btns[][] = new JButton[3][3];
 
+//******************************************************************************
     public Chap18TicTacToeGame() {
         setTitle("Tic-Tac-Toe");
         setSize(WIDTH, HEIGHT);
@@ -37,6 +38,7 @@ public class Chap18TicTacToeGame extends JFrame {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 button = new JButton();
+                btns[i][j] = button;
                 button.addActionListener(listener);
                 add(button);
             }
@@ -50,18 +52,54 @@ public class Chap18TicTacToeGame extends JFrame {
             JButton btn = (JButton) e.getSource();
             if (btn.getText().isEmpty()) {
                 btn.setText(xTurn ? "X" : "O");
-                // if there's a win
-                //{
-                //print winning player
-                //prepare for new game
+                if (isGameOver(btn) == true) {
+                    //if (false) {
+                    JOptionPane.showMessageDialog(btn, "Congrats winner "
+                            + (xTurn ? "X" : "O"));
+                    btn.setText("");
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++) {
+                            btns[i][j].setText("");
+                            xTurn = true;
+                        }
+                    }
+                } else {
+                    xTurn = !xTurn;
+                }
             } else {
-                xTurn = !xTurn;
                 JOptionPane.showMessageDialog(null, "Player "
-                        + (xTurn ? "O" : "X") + ", this spot is already taken");
+                        + (xTurn ? "X" : "O") + ", this spot is already taken");
             }
         }
     }
 //******************************************************************************
+
+    public boolean isGameOver(JButton button) {
+        for (int i = 0; i < 3; i++) {
+            if (btns[i][0].getText() == button.getText() && btns[i][1].getText()
+                    == button.getText() && btns[i][2].getText()
+                    == button.getText()) {
+                return true;
+            }
+        }
+        for (int j = 0; j < 3; j++) {
+            if (btns[0][j].getText() == button.getText() && btns[1][j].getText()
+                    == button.getText() && btns[2][j].getText()
+                    == button.getText()) {
+                return true;
+            }
+        }
+        if ((btns[0][0].getText() == button.getText() && btns[1][1].getText()
+                == button.getText() && btns[2][2].getText() == button.getText())
+                || (btns[0][2].getText() == button.getText()
+                && btns[1][1].getText()
+                == button.getText() && btns[2][0].getText()
+                == button.getText())) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public static void main(String[] args) {
         new Chap18TicTacToeGame();
