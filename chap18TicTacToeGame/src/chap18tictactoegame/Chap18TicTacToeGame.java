@@ -64,7 +64,6 @@ public class Chap18TicTacToeGame extends JFrame {
                         for (int j = 0; j < 3; j++) {
                             btns[i][j].setText("");
                             xTurn = true;
-
                         }
                     }
                 } else {
