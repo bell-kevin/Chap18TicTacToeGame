@@ -23,7 +23,17 @@ Once the game is over, whether because there is a winner or because there are no
 
 Play the game and take 6 screenshots: (1) when player X tried to use an already-used spot, (2) when player Y tried to use an already-used spot, (3) when player X wins, (4) when player Y wins, (5) when the game is over because there are no more moves, (6) the clean board after a game ends, before the next game begins.
 
+Blank
+
+ ![blank](https://github.com/bell-kevin/Chap18TicTacToeGame/blob/main/blank.PNG)
  
+ Player X, spot taken already
+ 
+ ![spot gone](https://github.com/bell-kevin/Chap18TicTacToeGame/blob/main/try%20again.PNG)
+ 
+ Winner X
+ 
+ ![win x](https://github.com/bell-kevin/Chap18TicTacToeGame/blob/main/winner.PNG)
 
 Submission: the specified screenshots and the root folder for the project
 
