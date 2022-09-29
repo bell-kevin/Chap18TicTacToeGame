@@ -9,9 +9,6 @@ package chap18tictactoegame;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.text.*;
-import java.util.*;
-import javax.swing.border.*;
 
 public class Chap18TicTacToeGame extends JFrame {
 
@@ -50,7 +47,6 @@ public class Chap18TicTacToeGame extends JFrame {
     private class Listener implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-
             JButton btn = (JButton) e.getSource();
             if (btn.getText().isEmpty()) {
                 btn.setText(xTurn ? "X" : "O");
