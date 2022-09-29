@@ -9,15 +9,15 @@ You will need to use a 3x3 array for the buttons to be able to check them to det
 
 The code provided in the book checks if the button clicked is empty and if so, applies a mark to that button. Expand that to display a message if the button clicked is NOT empty. Tell the user the button has already been clicked and let them try again (don’t switch to the other player’s turn). Identify which player clicked a non-empty button in the message. Here is a sample session when player X clicked on the center button that was already marked with an “O”:
 
-Ch 18 Tic Tac Toe spot taken
+![Ch 18 Tic Tac Toe spot taken](https://github.com/bell-kevin/Chap18TicTacToeGame/blob/main/spot%20taken%20O.PNG)
 
 You will need to add helper methods to check if the game is over either because the last player got 3 in a row or because the last spot was selected so there are no other possible moves. The book suggests several ways to check if a player got 3 in a row. Here is a sample session:
 
-Ch 18 Tic Tac Toe game over
+![Ch 18 Tic Tac Toe game over winner](https://github.com/bell-kevin/Chap18TicTacToeGame/blob/main/winner%20O.PNG)
 
 Here is a sample session if there is no winner:
 
-Ch 18 Tic Tac Toe no moves
+![Ch 18 Tic Tac Toe no moves](https://github.com/bell-kevin/Chap18TicTacToeGame/blob/main/no%20more%20moves.PNG)
 
 Once the game is over, whether because there is a winner or because there are no more moves, clicking on the OK button clears the board and restarts the game. No matter which player won or had the last turn, the first player of every game is player X.
 
