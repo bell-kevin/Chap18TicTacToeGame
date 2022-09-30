@@ -64,21 +64,22 @@ public class Chap18TicTacToeGame extends JFrame {
                     }
                 } else {
                     xTurn = !xTurn;
+                    count++;
+                    if (count == 9) {
+                        JOptionPane.showMessageDialog(null, "No more moves, game over");
+                        for (int i = 0; i < 3; i++) {
+                            for (int j = 0; j < 3; j++) {
+                                btns[i][j].setText("");
+                                xTurn = true;
+                            }
+                        }
+                    }
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Player "
                         + (xTurn ? "X" : "O") + ", this spot is already taken");
             }
-            count++;
-            if (count == 9) {
-                JOptionPane.showMessageDialog(null, "No more moves, game over");
-                for (int i = 0; i < 3; i++) {
-                    for (int j = 0; j < 3; j++) {
-                        btns[i][j].setText("");
-                        xTurn = true;
-                    }
-                }
-            }
+
         }
     }
 //******************************************************************************
